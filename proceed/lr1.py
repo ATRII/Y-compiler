@@ -98,7 +98,7 @@ class LR1:
                     cnt.add(e)
         return ans
 
-    def symbolfirst(self):
+    def symbolfirst(self) -> None:
         self.first = {symbol: set() for symbol in self.symbols}
         for terminal in self.terminal:
             self.first[terminal] = {terminal}
@@ -130,7 +130,6 @@ class LR1:
                 self.first[nonterminal].add(self.epsilon)
             if flag:
                 cnt.add(nonterminal)
-# TODO:unknown error
 
     def compute_first(self, symbol_list: tuple) -> set():
         first = set()

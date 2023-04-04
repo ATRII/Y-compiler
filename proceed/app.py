@@ -55,6 +55,15 @@ def upload_file():
     f = open("{}\\result\\tokens.txt".format(root_dir()), "w+")
     f.write(str(token_list))
     f.close()
+    f = open("{}\\result\\grammar_result.txt".format(root_dir()), "w+")
+    f.write(str(grammar_result))
+    f.close()
+    f = open("{}\\result\\pstklist.txt".format(root_dir()), "w+")
+    f.write(str(pstklist))
+    f.close()
+    f = open("{}\\result\\statestklist.txt".format(root_dir()), "w+")
+    f.write(str(statestklist))
+    f.close()
     args['token_list'] = token_list
     args['warning_list'] = warning_list
     args['parser_table'] = parsertable
