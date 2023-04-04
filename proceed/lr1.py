@@ -296,6 +296,10 @@ class LR1:
             if c not in self.action[state]:
                 print("unexpected token \"{0}\" at row{1}, type {2}, runtime statestack {3}, parserstack {4}".format(
                     c_t[2], c_t[0], c_t[1], statestk.queue, pstk.queue))
+                fe = open('../result/grammar_error.log', 'w+')
+                fe.write("unexpected token \"{0}\" at row{1}, type {2}, runtime statestack {3}, parserstack {4}".format(
+                    c_t[2], c_t[0], c_t[1], statestk.queue, pstk.queue))
+                fe.close()
                 break
             task = self.action[state][c]
             if task[0] == 'S':

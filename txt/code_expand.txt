@@ -3,10 +3,19 @@ def sum(x, y)->int
 {
     return x+y;
 }
+class something
+{
+    int p1=1;
+    float p2=2.567;
+    def init()->int
+    {
+        p1 = 2;
+        return 0;
+    }
+}
 def main()->int
 {
-    int I_1 = 9000000000;
-    I_1 = 20;
+    int I_1 = 900000000;
     int I_2 = I_1>>2&1;
     float B_1 = 9.25E-120;
     complex C_1 = 1.1-2.1i;

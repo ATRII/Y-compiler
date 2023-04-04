@@ -3,7 +3,7 @@
 <import_list>     ::=<import> <import_list>|<import>
 <import>          ::=keyword_import identifier
 <declaration_list>::=<declaration> <declaration_list>|<declaration>
-<declaration>     ::=<type_specifier> identifier delimiter_;|<function>|<expression> delimiter_;|<class>|keyword_return <expression> delimiter_;|<type_specifier> identifier operator_= <expression> delimiter_;
+<declaration>     ::=<type_specifier> identifier delimiter_;|<function>|<expression> delimiter_;|<class>|keyword_return <expression> delimiter_;|<type_specifier> identifier operator_= <expression> delimiter_;|identifier operator_= <expression> delimiter_;
 <class>           ::=keyword_class identifier <block>
 <function>        ::=keyword_def <function_name> delimiter_( <parameter_list> delimiter_) delimiter_-> <type_specifier> <block>
 <function_name>   ::=identifier|keyword_main

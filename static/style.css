@@ -14,7 +14,9 @@ body {
     font-weight: 300;
     text-align: left;
     color: #444;
-    background: #d0d0d0;
+    background-image: url('./img/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .left_div {
@@ -44,8 +46,8 @@ form {
     height: 240px;
     flex-direction: column;
     align-items: baseline;
-    padding-bottom: 20px;
-    margin-bottom: 10px;
+    padding-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 button, input[type=submit] {
@@ -176,4 +178,9 @@ table tfoot tr td {
 
 table.warning {
     color: rgb(198, 178, 26)
+}
+
+div {
+    background-color: #ccc;
+    opacity: 0.8;
 }
