@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Y Compiler</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css?version=1.0">
+    <script src="./js/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div class="left_div">
+        <form method="post" id="form1" class="form" action="upload_file">
+            <label for="input_lexical">Select lexical file:</label>
+            <div class="over_input">
+                <input id='input_lexical' type="file" name="lexical">
+                <span id='showFileName1' class='span_inbtn'>Click Here</span>
+                <span id="fileerrorTip1"></span>
+            </div>
+            <br>
+            <label for="input_code">Select code file:</label>
+            <div class="over_input">
+                <input id='input_code' type="file" name="code">
+                <span id='showFileName2' class='span_inbtn'>Click Here</span>
+                <span id="fileerrorTip2"></span>
+            </div>
+            <br>
+            <label for="input_grammar">Select grammar file:</label>
+            <div class="over_input">
+                <input id='input_grammar' type="file" name="grammar">
+                <span id='showFileName3' class='span_inbtn'>Click Here</span>
+                <span id="fileerrorTip3"></span>
+            </div>
+            <br>
+            <div class="row">
+                <button id="info_btn1" type="button">Infor</button>
+                <input id='submit_btn1' type="submit" value="Submit"></input>
+            </div>
+        </form>
+        <div id="hint">
+            {%if file1_flag=='failed'%}
+            <p>LEXICAL FILE UPLOAD FAILED</p>
+            {%elif file1_flag=='success'%}
+            <p>LEXICAL FILE UPLOAD SUCCESS</p>
+            {%else%}
+            {%endif%}
+            {%if file2_flag=='failed'%}
+            <p>CODE FILE UPLOAD FAILED</p>
+            {%elif file1_flag=='success'%}
+            <p>CODE FILE UPLOAD SUCCESS</p>
+            {%else%}
+            {%endif%}
+            {%if file3_flag=='failed'%}
+            <p>GRAMMAR FILE UPLOAD FAILED</p>
+            {%elif file1_flag=='success'%}
+            <p>GRAMMAR FILE UPLOAD SUCCESS</p>
+            {%else%}
+            {%endif%}
+        </div>
+        <pre id="result1"></pre>
+        <p id="content1"></p>
+        <br>
+        <pre id="result2"></pre>
+        <p id="content2"></p>
+        <br>
+        <pre id="result3"></pre>
+        <p id="content3"></p>
+        <div class="result_div" id="parse_result">
+            <table class="tokenlist">
+                {%for i in token_list:%}
+                <tr>
+                    <td>{{i[0]}}</td>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+            <table class="warning">
+                {%for i in warning_list:%}
+                <tr>
+                    <td>{{i}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </div>
+    <div class="right_div">
+        <table>
+            {%for i in parser_table:%}
+            <tr>
+                {%for x in i:%}
+                <td>{{x}}</td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </table>
+        <br>
+        <p id="grammar_result" class={{grammar_result}}>{{grammar_result}}</p>
+        <br>
+        <table>
+            {%for i in pstklist:%}
+            <tr>
+                {%for x in i:%}
+                <td>{{x}}</td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </table>
+        <br>
+        <table>
+            {%for i in statestklist:%}
+            <tr>
+                {%for x in i:%}
+                <td>{{x}}</td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+    <script src="./js/code.js?version='1.1"></script>
+    <script>
+        $(document).ready(function () {
+            $("#input_lexical").on("change", function () {
+                console.log('get element \'input_lexical\'')
+                var filePath = $(this).val();
+                if (filePath.indexOf("txt") != -1) {
+                    $(".fileerrorTip").html("").hide();
+                    var arr = filePath.split('\\');
+                    var fileName = arr[arr.length - 1];
+                    $("#showFileName1").html(fileName);
+                } else {
+                    $("#showFileName1").html("");
+                    $("#fileerrorTip1").html("File Type Error").show();
+                    return false
+                }
+            });
+            $("#input_code").on("change", function () {
+                console.log('get element \'input_code\'')
+                var filePath = $(this).val();
+                if (filePath.indexOf("txt") != -1) {
+                    $(".fileerrorTip").html("").hide();
+                    var arr = filePath.split('\\');
+                    var fileName = arr[arr.length - 1];
+                    $("#showFileName2").html(fileName);
+                } else {
+                    $("#showFileName2").html("");
+                    $("#fileerrorTip2").html("File Type Error").show();
+                    return false
+                }
+            });
+            $("#input_grammar").on("change", function () {
+                console.log('get element \'input_grammar\'')
+                var filePath = $(this).val();
+                if (filePath.indexOf("txt") != -1) {
+                    $(".fileerrorTip").html("").hide();
+                    var arr = filePath.split('\\');
+                    var fileName = arr[arr.length - 1];
+                    $("#showFileName3").html(fileName);
+                } else {
+                    $("#showFileName3").html("");
+                    $("#fileerrorTip3").html("File Type Error").show();
+                    return false
+                }
+            });
+        });
+    </script>
+</body>

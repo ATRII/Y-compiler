@@ -1,0 +1,49 @@
+7
+delimiter
+if else elif import def class private public while for main return int float bool complex string true false
+2
+<identifier> <accept> epsilon ::= |
+<identifier>::=a<A>|b<A>|c<A>|d<A>|e<A>|f<A>|g<A>|h<A>|i<A>|j<A>|k<A>|l<A>|m<A>|n<A>|o<A>|p<A>|q<A>|r<A>|s<A>|t<A>|u<A>|v<A>|w<A>|x<A>|y<A>|z<A>|A<A>|B<A>|C<A>|D<A>|E<A>|F<A>|G<A>|H<A>|I<A>|J<A>|K<A>|L<A>|M<A>|N<A>|O<A>|P<A>|Q<A>|R<A>|S<A>|T<A>|U<A>|V<A>|W<A>|X<A>|Y<A>|Z<A>|_<A>
+<A>::=a<A>|b<A>|c<A>|d<A>|e<A>|f<A>|g<A>|h<A>|i<A>|j<A>|k<A>|l<A>|m<A>|n<A>|o<A>|p<A>|q<A>|r<A>|s<A>|t<A>|u<A>|v<A>|w<A>|x<A>|y<A>|z<A>|A<A>|B<A>|C<A>|D<A>|E<A>|F<A>|G<A>|H<A>|I<A>|J<A>|K<A>|L<A>|M<A>|N<A>|O<A>|P<A>|Q<A>|R<A>|S<A>|T<A>|U<A>|V<A>|W<A>|X<A>|Y<A>|Z<A>|0<A>|1<A>|2<A>|3<A>|4<A>|5<A>|6<A>|7<A>|8<A>|9<A>|_<A>|epsilon
+2
+<delimiter> <accept> epsilon ::= |
+<delimiter>::=,|(|)|;|[|]|{|}|:|-<A>
+<A>::=>
+3
+<operator> <accept> epsilon ::= space
+<operator>::=+ - * / & | ! =<A> <<A> ><B>
+<A>::=< = epsilon
+<B>::=> = epsilon
+3
+<const_integer> <accept> epsilon ::= |
+<const_integer>::=+<A>|-<A>|<A>
+<A>::=1<B>|2<B>|3<B>|4<B>|5<B>|6<B>|7<B>|8<B>|9<B>|0
+<B>::=0<B>|1<B>|2<B>|3<B>|4<B>|5<B>|6<B>|7<B>|8<B>|9<B>|epsilon
+9
+<const_float> <accept> epsilon ::= |
+<const_float>::=+<A>|-<A>|<A>
+<A>::=1<B>|2<B>|3<B>|4<B>|5<B>|6<B>|7<B>|8<B>|9<B>|0<C>
+<B>::=0<B>|1<B>|2<B>|3<B>|4<B>|5<B>|6<B>|7<B>|8<B>|9<B>|<C>
+<C>::=.<D>
+<D>::=0<D>|1<D>|2<D>|3<D>|4<D>|5<D>|6<D>|7<D>|8<D>|9<D>|<E>|epsilon
+<E>::=E<F>
+<F>::=+<G>|-<G>|<G>
+<G>::=1<H>|2<H>|3<H>|4<H>|5<H>|6<H>|7<H>|8<H>|9<H>|0
+<H>::=0<H>|1<H>|2<H>|3<H>|4<H>|5<H>|6<H>|7<H>|8<H>|9<H>|epsilon
+11
+<const_complex> <accept> epsilon ::= |
+<const_complex>::=+<A>|-<A>|<A>|<E>
+<A>::=1<B>|2<B>|3<B>|4<B>|5<B>|6<B>|7<B>|8<B>|9<B>|0<C>
+<B>::=0<B>|1<B>|2<B>|3<B>|4<B>|5<B>|6<B>|7<B>|8<B>|9<B>|<C>|<E>
+<C>::=.<D>
+<D>::=0<D>|1<D>|2<D>|3<D>|4<D>|5<D>|6<D>|7<D>|8<D>|9<D>|<E>
+<E>::=+<F>|-<F>|<F>
+<F>::=1<G>|2<G>|3<G>|4<G>|5<G>|6<G>|7<G>|8<G>|9<G>|0<H>
+<G>::=0<G>|1<G>|2<G>|3<G>|4<G>|5<G>|6<G>|7<G>|8<G>|9<G>|<H>|<J>
+<H>::=.<I>
+<I>::=0<I>|1<I>|2<I>|3<I>|4<I>|5<I>|6<I>|7<I>|8<I>|9<I>|<J>
+<J>::=i
+2
+<const_string> <accept> epsilon ::= |
+<const_string>::='<A>|"<A>
+<A>::='|"|!<A>|@<A>|#<A>|$<A>|%<A>|^<A>|&<A>|*<A>|(<A>|)<A>|_<A>|+<A>|-<A>|=<A>|a<A>|b<A>|c<A>|d<A>|e<A>|f<A>|g<A>|h<A>|i<A>|j<A>|k<A>|l<A>|m<A>|n<A>|o<A>|p<A>|q<A>|r<A>|s<A>|t<A>|u<A>|v<A>|w<A>|x<A>|y<A>|z<A>|A<A>|B<A>|C<A>|D<A>|E<A>|F<A>|G<A>|H<A>|I<A>|J<A>|K<A>|L<A>|M<A>|N<A>|O<A>|P<A>|Q<A>|R<A>|S<A>|T<A>|U<A>|V<A>|W<A>|X<A>|Y<A>|Z<A>|0<A>|1<A>|2<A>|3<A>|4<A>|5<A>|6<A>|7<A>|8<A>|9<A>|.<A>|,<A>|?<A>|:<A>|;<A>|[<A>|]<A>|{<A>|}<A>

@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+    color: #444;
+    background: #d0d0d0;
+}
+
+.left_div {
+    width: 30%;
+    height: 100%;
+    overflow: auto;
+    float: left;
+}
+
+.right_div {
+    background-color: #fafafa;
+    width: 69%;
+    height: 100%;
+    overflow: auto;
+    float: right;
+    margin-left: auto;
+}
+
+p {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+form {
+    display: flex;
+    font-size: 20px;
+    height: 240px;
+    flex-direction: column;
+    align-items: baseline;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+button, input[type=submit] {
+    border-radius: 4px;
+    height: 40px;
+    font: inherit;
+    font-size: 16px;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #777;
+    width: 49%;
+}
+
+button:hover, input[type=submit]:hover {
+    color: #444;
+    background: #eee;
+    border-color: #777;
+    text-decoration: none
+}
+
+input[type=file] {
+    position: relative;
+    left: 0;
+    font: inherit;
+    font-size: 18px;
+}
+
+/*a  upload */
+.over_input {
+    text-align: center;
+    flex-shrink: 0;
+    margin-left: auto;
+    font-size: 14px;
+    padding: auto;
+    width: 45%;
+    height: 25px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #777;
+    border-radius: 4px;
+    overflow: hidden;
+    /* display: inline-block; */
+    *display: inline;
+    *zoom: 1
+}
+
+.over_input input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.over_input:hover {
+    color: #444;
+    background: #eee;
+    border-color: #777;
+    text-decoration: none
+}
+
+.span_inbtn {
+    padding: auto;
+}
+
+.row {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+th, td {
+    border: 1px solid #999;
+    text-align: center;
+    padding: auto;
+}
+
+table thead tr {
+    background-color: #008c8c;
+    color: #fff;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+table tbody tr:hover {
+    background-color: #ccc;
+}
+
+table tfoot tr td {
+    text-align: right;
+    padding-right: auto;
+}
+
+.right_div table tr {
+    height: max-content;
+}
+
+#hint {
+    padding: 5px;
+    margin: auto;
+
+}
+
+#grammar_result.False {
+    font-size: large;
+    color: #991c1c;
+}
+
+#grammar_result.True {
+    font-size: large;
+    color: #29b762;
+}
+
+table.warning {
+    color: rgb(198, 178, 26)
+}

@@ -1,0 +1,15 @@
+import xx
+def sum(x, y)->int
+{
+    return x+y;
+}
+def main()->int
+{
+    int I_1 =  ;
+    int I_2 = I_1>>2&1;
+    float B_1 = 9.25E-120;
+    complex C_1 = 1.1-2.1i;
+    string S_1 = "1234aidsj";
+    print(sum(I_1, I_2));
+    return 0;
+}

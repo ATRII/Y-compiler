@@ -1,0 +1,19 @@
+<program>
+<program>         ::=<import_list> <declaration_list>
+<import_list>     ::=<import> <import_list>|<import>
+<import>          ::=keyword_import identifier
+<declaration_list>::=<declaration> <declaration_list>|<declaration>
+<declaration>     ::=<type_specifier> identifier delimiter_;|<function>|<expression> delimiter_;|<class>|keyword_return <expression> delimiter_;|<type_specifier> identifier operator_= <expression> delimiter_;
+<class>           ::=keyword_class identifier <block>
+<function>        ::=keyword_def <function_name> delimiter_( <parameter_list> delimiter_) delimiter_-> <type_specifier> <block>
+<function_name>   ::=identifier|keyword_main
+<parameter_list>  ::=identifier delimiter_, <parameter_list>|identifier|epsilon
+<block>           ::=delimiter_{ <declaration_list> delimiter_} 
+<expression>      ::=<expression> operator <expression>|<const_expression>|identifier|delimiter_( <expression> delimiter_)|<call>
+<type_specifier>  ::=keyword_int|keyword_string|keyword_float|keyword_bool|keyword_complex
+<list>            ::=delimiter_[ <expression_list> delimiter_]
+<expression_list> ::=<expression>|<expression> delimiter_, <expression_list> 
+<const_expression>::=const_string|const_integer|const_float|const_complex|<const_bool>
+<const_bool>      ::=keyword_true|keyword_false
+<call>            ::=<function_name> delimiter_( <called_parameter_list> delimiter_)
+<called_parameter_list>::=<expression_list>|epsilon
